@@ -1,0 +1,2257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#031827">
+<meta name="description" content="Jalgaon BGMI Esports - Ocean Odyssey Tournament">
+
+<title>Jalgaon BGMI Esports | JLG19 Ocean Odyssey</title>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+
+<style>
+:root{
+  --bg:#020b14;
+  --bg2:#031c2d;
+  --panel:rgba(5,29,46,.88);
+  --cyan:#42eaff;
+  --blue:#168dff;
+  --aqua:#47ffd0;
+  --gold:#ffd45a;
+  --white:#f4fcff;
+  --muted:#8eb7c8;
+  --line:rgba(66,234,255,.24);
+  --danger:#ff6578;
+  --green:#4dff9a;
+}
+
+*{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  color:var(--white);
+  font-family:Arial,Helvetica,sans-serif;
+  background:
+    radial-gradient(circle at 20% 0%,rgba(0,210,255,.18),transparent 30%),
+    radial-gradient(circle at 90% 15%,rgba(0,255,190,.10),transparent 28%),
+    linear-gradient(180deg,#010914,#031c2d 48%,#010914);
+  overflow-x:hidden;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.16;
+  background:
+    radial-gradient(circle at 15% 20%,#fff 0 1px,transparent 2px),
+    radial-gradient(circle at 75% 65%,#fff 0 1px,transparent 2px),
+    radial-gradient(circle at 45% 80%,#fff 0 1px,transparent 2px);
+  background-size:180px 180px,240px 240px,310px 310px;
+  animation:stars 18s linear infinite;
+}
+
+@keyframes stars{
+  to{background-position:180px 180px,-240px 240px,310px -310px}
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.container{
+  width:min(1150px,92%);
+  margin:auto;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  backdrop-filter:blur(18px);
+  background:rgba(1,10,18,.82);
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  min-height:68px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:1000;
+}
+
+.logo-mark{
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  border-radius:13px;
+  color:#00131d;
+  background:linear-gradient(135deg,#7cffff,#168dff);
+  box-shadow:0 0 25px rgba(66,234,255,.4);
+  font-size:18px;
+  font-weight:1000;
+}
+
+.logo-text strong{
+  display:block;
+  font-size:17px;
+}
+
+.logo-text small{
+  color:var(--cyan);
+  font-size:10px;
+  letter-spacing:2px;
+}
+
+.navlinks{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+}
+
+.navlinks a{
+  padding:9px 12px;
+  border-radius:10px;
+  color:#bcecff;
+  font-size:12px;
+}
+
+.navlinks a:hover{
+  background:rgba(66,234,255,.10);
+  color:#fff;
+}
+
+.hero{
+  min-height:760px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  padding:80px 0;
+}
+
+.hero-ocean{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse at 15% 55%,rgba(0,220,255,.25),transparent 28%),
+    radial-gradient(ellipse at 85% 30%,rgba(0,255,210,.16),transparent 25%),
+    linear-gradient(180deg,transparent,#020b14 95%);
+}
+
+.hero-ocean:before,
+.hero-ocean:after{
+  content:"";
+  position:absolute;
+  width:600px;
+  height:160px;
+  border:2px solid rgba(66,234,255,.13);
+  border-radius:50%;
+  left:50%;
+  transform:translateX(-50%);
+  animation:wave 5s ease-in-out infinite;
+}
+
+.hero-ocean:before{bottom:18%;transform:translateX(-50%) rotate(-4deg)}
+.hero-ocean:after{bottom:10%;transform:translateX(-50%) rotate(5deg);animation-delay:1.3s}
+
+@keyframes wave{
+  50%{transform:translateX(-50%) scale(1.15);opacity:.35}
+}
+
+.hero-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:45px;
+  align-items:center;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:8px 12px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:rgba(0,160,220,.08);
+  color:var(--cyan);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+h1{
+  font-size:clamp(45px,7vw,88px);
+  line-height:.92;
+  margin:20px 0;
+  letter-spacing:-4px;
+}
+
+.gradient{
+  background:linear-gradient(90deg,#fff,#63edff,#4dffd0,#fff);
+  background-size:250%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  animation:shine 4s linear infinite;
+}
+
+@keyframes shine{
+  to{background-position:250%}
+}
+
+.hero p{
+  color:#b6dce9;
+  font-size:17px;
+  line-height:1.7;
+  max-width:680px;
+}
+
+.jalgaon-line{
+  color:var(--gold);
+  font-weight:900;
+  margin:15px 0;
+}
+
+.hero-art{
+  position:relative;
+  min-height:480px;
+  display:grid;
+  place-items:center;
+}
+
+.orb{
+  width:340px;
+  height:340px;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 35% 30%,#cfffff,#25c9ff 22%,#075d9b 52%,#021a30 70%);
+  box-shadow:
+    0 0 45px rgba(66,234,255,.45),
+    0 0 130px rgba(0,150,255,.25);
+  animation:float 5s ease-in-out infinite;
+}
+
+@keyframes float{
+  50%{transform:translateY(-16px) rotate(3deg)}
+}
+
+.orb:before{
+  content:"JLG19";
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  color:white;
+  font-size:64px;
+  font-weight:1000;
+  font-style:italic;
+  text-shadow:0 0 20px #00d9ff;
+}
+
+.orb:after{
+  content:"BGMI ESPORTS";
+  position:absolute;
+  left:0;
+  right:0;
+  top:59%;
+  text-align:center;
+  color:#bff8ff;
+  letter-spacing:5px;
+  font-size:12px;
+  font-weight:1000;
+}
+
+.btns{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:25px;
+}
+
+.btn{
+  border:0;
+  cursor:pointer;
+  padding:14px 18px;
+  border-radius:13px;
+  font-weight:1000;
+  color:white;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:7px;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.primary{
+  background:linear-gradient(100deg,#00cfff,#167dff);
+  box-shadow:0 0 25px rgba(0,180,255,.3);
+}
+
+.secondary{
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.04);
+}
+
+section{
+  padding:75px 0;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.section-title small{
+  color:var(--cyan);
+  font-weight:1000;
+  letter-spacing:3px;
+}
+
+.section-title h2{
+  font-size:clamp(30px,5vw,50px);
+  margin:10px 0;
+}
+
+.section-title p{
+  color:var(--muted);
+}
+
+.grid{
+  display:grid;
+  gap:18px;
+}
+
+.matches{
+  grid-template-columns:repeat(5,1fr);
+}
+
+.card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:20px;
+  box-shadow:0 15px 60px rgba(0,0,0,.25);
+}
+
+.match{
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.match:hover{
+  transform:translateY(-5px);
+  border-color:rgba(66,234,255,.7);
+}
+
+.match.active{
+  border-color:var(--aqua);
+  box-shadow:0 0 30px rgba(71,255,208,.16);
+}
+
+.match-icon{
+  font-size:35px;
+}
+
+.match h3{
+  margin:12px 0 5px;
+}
+
+.match p{
+  color:var(--muted);
+  font-size:12px;
+}
+
+.price{
+  color:var(--gold);
+  font-size:24px;
+  font-weight:1000;
+}
+
+.prizes{
+  grid-template-columns:repeat(3,1fr);
+}
+
+.prize{
+  border-color:rgba(255,212,90,.3);
+  background:
+    radial-gradient(circle at 50% 0%,rgba(255,212,90,.12),transparent 45%),
+    var(--panel);
+  animation:prize 3s ease-in-out infinite;
+}
+
+.prize:nth-child(2){animation-delay:.5s}
+.prize:nth-child(3){animation-delay:1s}
+
+@keyframes prize{
+  50%{
+    transform:translateY(-5px);
+    box-shadow:0 0 50px rgba(255,212,90,.12);
+  }
+}
+
+.prize h3{
+  color:var(--gold);
+  font-size:25px;
+}
+
+.prize-row{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding:12px;
+  margin:8px 0;
+  border-radius:12px;
+  background:rgba(255,255,255,.04);
+}
+
+.prize-row b{
+  color:var(--gold);
+}
+
+.highlight{
+  padding:18px;
+  margin-top:20px;
+  text-align:center;
+  border-radius:17px;
+  border:1px solid rgba(255,212,90,.4);
+  background:rgba(255,212,90,.07);
+  color:#ffe89a;
+  font-weight:1000;
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  50%{box-shadow:0 0 30px rgba(255,212,90,.14)}
+}
+
+.countdown{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  max-width:800px;
+  margin:30px auto;
+}
+
+.time{
+  text-align:center;
+  padding:20px 10px;
+  border-radius:18px;
+  background:rgba(0,20,35,.8);
+  border:1px solid var(--line);
+}
+
+.time strong{
+  display:block;
+  font-size:38px;
+  color:var(--cyan);
+}
+
+.time span{
+  color:var(--muted);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+.memes{
+  grid-template-columns:repeat(3,1fr);
+}
+
+.meme{
+  text-align:center;
+  font-weight:900;
+  font-size:18px;
+  line-height:1.5;
+}
+
+.meme span{
+  display:block;
+  color:var(--gold);
+  font-size:12px;
+  margin-top:10px;
+}
+
+.rules{
+  grid-template-columns:repeat(2,1fr);
+}
+
+.rule{
+  display:flex;
+  gap:13px;
+}
+
+.rule-number{
+  flex:0 0 34px;
+  height:34px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:rgba(66,234,255,.12);
+  color:var(--cyan);
+  font-weight:1000;
+}
+
+.rule p{
+  margin:5px 0 0;
+  color:var(--muted);
+  line-height:1.6;
+  font-size:13px;
+}
+
+.register-grid{
+  display:grid;
+  grid-template-columns:1fr .8fr;
+  gap:20px;
+  align-items:start;
+}
+
+.form{
+  display:grid;
+  gap:13px;
+}
+
+label{
+  color:#bcecff;
+  font-size:12px;
+  font-weight:900;
+}
+
+input,select,textarea{
+  width:100%;
+  padding:13px;
+  margin-top:6px;
+  border-radius:11px;
+  border:1px solid var(--line);
+  background:#021522;
+  color:white;
+  outline:none;
+}
+
+input:focus,select:focus{
+  border-color:var(--cyan);
+  box-shadow:0 0 0 3px rgba(66,234,255,.08);
+}
+
+.players{
+  display:grid;
+  gap:10px;
+}
+
+.player-box{
+  padding:12px;
+  border-radius:13px;
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.06);
+}
+
+.payment{
+  text-align:center;
+  position:sticky;
+  top:85px;
+}
+
+.payment h3{
+  color:var(--cyan);
+}
+
+.amount{
+  font-size:50px;
+  color:var(--gold);
+  font-weight:1000;
+  text-shadow:0 0 20px rgba(255,212,90,.3);
+}
+
+.qr-wrap{
+  background:white;
+  border-radius:18px;
+  padding:10px;
+  width:min(330px,90%);
+  margin:15px auto;
+}
+
+#qr{
+  width:100%;
+  min-height:260px;
+  display:grid;
+  place-items:center;
+}
+
+#qr img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+.upi{
+  word-break:break-all;
+  color:var(--aqua);
+  padding:11px;
+  border:1px dashed rgba(71,255,208,.4);
+  border-radius:11px;
+  font-size:12px;
+}
+
+.note{
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.6;
+}
+
+.success{
+  display:none;
+  padding:20px;
+  margin-top:15px;
+  border-radius:17px;
+  border:1px solid rgba(71,255,208,.5);
+  background:rgba(71,255,208,.08);
+  text-align:center;
+}
+
+.success-code{
+  font-size:32px;
+  color:var(--aqua);
+  font-weight:1000;
+  letter-spacing:2px;
+}
+
+.dashboard-login{
+  max-width:450px;
+  margin:auto;
+}
+
+.dashboard-app{
+  display:none;
+}
+
+.stats{
+  grid-template-columns:repeat(4,1fr);
+  margin-bottom:20px;
+}
+
+.stat{
+  text-align:center;
+}
+
+.stat strong{
+  display:block;
+  color:var(--cyan);
+  font-size:32px;
+}
+
+.table-wrap{
+  overflow:auto;
+}
+
+table{
+  width:100%;
+  min-width:850px;
+  border-collapse:collapse;
+}
+
+th,td{
+  padding:11px;
+  text-align:left;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  font-size:12px;
+}
+
+th{
+  color:var(--muted);
+}
+
+.status{
+  color:var(--gold);
+  font-weight:900;
+}
+
+.empty{
+  text-align:center;
+  color:var(--muted);
+  padding:30px;
+}
+
+footer{
+  padding:35px 0;
+  border-top:1px solid var(--line);
+  text-align:center;
+  color:var(--muted);
+}
+
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:20px;
+  transform:translateX(-50%) translateY(100px);
+  z-index:999;
+  background:#062b40;
+  border:1px solid var(--cyan);
+  color:white;
+  padding:13px 18px;
+  border-radius:12px;
+  transition:.3s;
+  max-width:90%;
+  text-align:center;
+}
+
+.toast.show{
+  transform:translateX(-50%) translateY(0);
+}
+
+@media(max-width:950px){
+  .hero-grid,
+  .register-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-art{
+    order:-1;
+    min-height:360px;
+  }
+
+  .matches{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .prizes,
+  .memes,
+  .rules{
+    grid-template-columns:1fr;
+  }
+
+  .payment{
+    position:static;
+  }
+}
+
+@media(max-width:600px){
+  .navlinks a:nth-child(-n+2){
+    display:none;
+  }
+
+  .hero{
+    min-height:auto;
+    padding:65px 0;
+  }
+
+  h1{
+    font-size:48px;
+  }
+
+  .orb{
+    width:260px;
+    height:260px;
+  }
+
+  .orb:before{
+    font-size:45px;
+  }
+
+  .matches,
+  .stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .countdown{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .time strong{
+    font-size:30px;
+  }
+}
+
+@media(max-width:400px){
+  .matches,
+  .stats{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+
+  <a href="#" class="logo">
+    <div class="logo-mark">J19</div>
+    <div class="logo-text">
+      <strong>Jalgaon BGMI</strong>
+      <small>JLG19 ESPORTS</small>
+    </div>
+  </a>
+
+  <nav class="navlinks">
+    <a href="#matches">Matches</a>
+    <a href="#prizes">Prize Pool</a>
+    <a href="#rules">Rules</a>
+    <a href="#register">Register</a>
+    <a href="#dashboard">Dashboard</a>
+  </nav>
+
+</div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero">
+
+<div class="hero-ocean"></div>
+
+<div class="container hero-grid">
+
+  <div>
+
+    <span class="badge">
+      🌊 OCEAN ODYSSEY • JALGAON 425001
+    </span>
+
+    <h1>
+      <span class="gradient">JALGAON</span><br>
+      BGMI<br>
+      ESPORTS
+    </h1>
+
+    <p>
+      Dive into the battlefield. Squad up. Drop in.
+      Survive the Ocean Odyssey and fight for the prize pool.
+    </p>
+
+    <div class="jalgaon-line">
+      🔥 Jalgaon chi masti • Ahirani cha swag • BGMI cha tag!
+    </div>
+
+    <div class="btns">
+      <a class="btn primary" href="#register">
+        ⚔️ REGISTER NOW
+      </a>
+
+      <a class="btn secondary" href="#prizes">
+        🏆 PRIZE POOL
+      </a>
+    </div>
+
+  </div>
+
+
+  <div class="hero-art">
+    <div class="orb"></div>
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- COUNTDOWN -->
+<section>
+
+<div class="container">
+
+<div class="section-title">
+  <small>🌊 THE DROP IS COMING</small>
+  <h2>18 OCTOBER 2026</h2>
+  <p>Sunday • Jalgaon BGMI Esports</p>
+</div>
+
+<div class="countdown">
+
+  <div class="time">
+    <strong id="days">00</strong>
+    <span>Days</span>
+  </div>
+
+  <div class="time">
+    <strong id="hours">00</strong>
+    <span>Hours</span>
+  </div>
+
+  <div class="time">
+    <strong id="minutes">00</strong>
+    <span>Minutes</span>
+  </div>
+
+  <div class="time">
+    <strong id="seconds">00</strong>
+    <span>Seconds</span>
+  </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MATCHES -->
+<section id="matches">
+
+<div class="container">
+
+<div class="section-title">
+  <small>⚔️ CHOOSE YOUR BATTLE</small>
+  <h2>TOURNAMENT MATCHES</h2>
+  <p>Every player entry is ₹30.</p>
+</div>
+
+<div class="grid matches">
+
+  <div class="card match active" onclick="selectMatch('solo1')">
+    <div class="match-icon">🎯</div>
+    <h3>Solo 1</h3>
+    <p>1 Player</p>
+    <div class="price">₹30</div>
+  </div>
+
+  <div class="card match" onclick="selectMatch('solo2')">
+    <div class="match-icon">🎯</div>
+    <h3>Solo 2</h3>
+    <p>1 Player</p>
+    <div class="price">₹30</div>
+  </div>
+
+  <div class="card match" onclick="selectMatch('duo1')">
+    <div class="match-icon">👥</div>
+    <h3>Duo 1</h3>
+    <p>2 Players</p>
+    <div class="price">₹60</div>
+  </div>
+
+  <div class="card match" onclick="selectMatch('duo2')">
+    <div class="match-icon">👥</div>
+    <h3>Duo 2</h3>
+    <p>2 Players</p>
+    <div class="price">₹60</div>
+  </div>
+
+  <div class="card match" onclick="selectMatch('squad')">
+    <div class="match-icon">⚔️</div>
+    <h3>Squad</h3>
+    <p>4 Players</p>
+    <div class="price">₹120</div>
+  </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PRIZES -->
+<section id="prizes">
+
+<div class="container">
+
+<div class="section-title">
+  <small>💎 BATTLE REWARDS</small>
+  <h2>PRIZE POOL</h2>
+  <p>Big drops. Big fights. Big rewards.</p>
+</div>
+
+<div class="grid prizes">
+
+  <div class="card prize">
+
+    <h3>🏆 SQUAD</h3>
+
+    <div class="prize-row">
+      <span>Top 10</span>
+      <b>₹500 each</b>
+    </div>
+
+    <div class="prize-row">
+      <span>Top 5</span>
+      <b>₹1,001 each</b>
+    </div>
+
+    <div class="prize-row">
+      <span>Winning Squad</span>
+      <b>₹3,000 × 4</b>
+    </div>
+
+    <div class="prize-row">
+      <span>Winning Total</span>
+      <b>₹12,000</b>
+    </div>
+
+  </div>
+
+
+  <div class="card prize">
+
+    <h3>🥈 DUO</h3>
+
+    <div class="prize-row">
+      <span>Top 10</span>
+      <b>₹500 each</b>
+    </div>
+
+    <div class="prize-row">
+      <span>Top 5</span>
+      <b>₹1,001 each</b>
+    </div>
+
+    <div class="prize-row">
+      <span>Top 2 Duos</span>
+      <b>₹4,000 × 4</b>
+    </div>
+
+  </div>
+
+
+  <div class="card prize">
+
+    <h3>🥉 SOLO</h3>
+
+    <div class="prize-row">
+      <span>Top 10</span>
+      <b>₹700 each</b>
+    </div>
+
+    <div class="prize-row">
+      <span>Top 5</span>
+      <b>₹1,200 each</b>
+    </div>
+
+    <div class="prize-row">
+      <span>Top 3</span>
+      <b>₹5,000 each</b>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="highlight">
+  🏆 PRIZE POOL IS SUBJECT TO THE FINAL PUBLISHED TOURNAMENT RULES.
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MEMES -->
+<section>
+
+<div class="container">
+
+<div class="section-title">
+  <small>😂 JALGAON MODE ON</small>
+  <h2>JALGAON MASTI</h2>
+</div>
+
+<div class="grid memes">
+
+  <div class="card meme">
+    "Jalgaon cha player lobby madhe ala,
+    tar enemy ne Wi-Fi band karaycha!" 😎
+    <span>— JLG19 VIBE</span>
+  </div>
+
+  <div class="card meme">
+    "Ahirani swag, BGMI madhla tag!" 🔥
+    <span>— APLE JALGAON</span>
+  </div>
+
+  <div class="card meme">
+    "Rank push karaycha nahi...
+    Jalgaon cha naam push karaycha!" 😂
+    <span>— JLG19 ESPORTS</span>
+  </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RULES -->
+<section id="rules">
+
+<div class="container">
+
+<div class="section-title">
+  <small>📜 READ BEFORE REGISTERING</small>
+  <h2>TOURNAMENT RULES</h2>
+</div>
+
+<div class="grid rules">
+
+  <div class="card rule">
+    <div class="rule-number">1</div>
+    <div>
+      <b>Valid BGMI UID</b>
+      <p>Enter the correct BGMI player name and UID. Incorrect information can cause registration issues.</p>
+    </div>
+  </div>
+
+  <div class="card rule">
+    <div class="rule-number">2</div>
+    <div>
+      <b>Payment</b>
+      <p>Pay exactly the amount shown for your selected match. Solo ₹30, Duo ₹60 and Squad ₹120.</p>
+    </div>
+  </div>
+
+  <div class="card rule">
+    <div class="rule-number">3</div>
+    <div>
+      <b>UTR Required</b>
+      <p>After payment, enter the correct UTR / transaction reference. Do not enter your UPI PIN or OTP.</p>
+    </div>
+  </div>
+
+  <div class="card rule">
+    <div class="rule-number">4</div>
+    <div>
+      <b>Duplicate UID</b>
+      <p>Do not use the same BGMI UID for multiple players in the same registration.</p>
+    </div>
+  </div>
+
+  <div class="card rule">
+    <div class="rule-number">5</div>
+    <div>
+      <b>Match Information</b>
+      <p>Room ID and password, if applicable, should be released by the organizer before the match.</p>
+    </div>
+  </div>
+
+  <div class="card rule">
+    <div class="rule-number">6</div>
+    <div>
+      <b>Prize Settlement</b>
+      <p>Prizes are settled according to the final published results and tournament rules.</p>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- REGISTER -->
+<section id="register">
+
+<div class="container">
+
+<div class="section-title">
+  <small>⚔️ ENTER THE OCEAN</small>
+  <h2>REGISTER NOW</h2>
+  <p>Your registration code will be generated after submission.</p>
+</div>
+
+
+<div class="register-grid">
+
+
+<!-- FORM -->
+
+<div class="card">
+
+<form class="form" id="registrationForm">
+
+  <label>
+    Match
+    <select id="match">
+      <option value="solo1">Solo Match 1 — ₹30</option>
+      <option value="solo2">Solo Match 2 — ₹30</option>
+      <option value="duo1">Duo Match 1 — ₹60</option>
+      <option value="duo2">Duo Match 2 — ₹60</option>
+      <option value="squad">Squad Match — ₹120</option>
+    </select>
+  </label>
+
+
+  <label>
+    Team / Player Name
+    <input id="teamName" required maxlength="40" placeholder="Enter name">
+  </label>
+
+
+  <label>
+    Mobile Number
+    <input
+      id="mobile"
+      required
+      maxlength="10"
+      inputmode="numeric"
+      pattern="[0-9]{10}"
+      placeholder="10 digit mobile number">
+  </label>
+
+
+  <label>
+    Email
+    <input
+      id="email"
+      required
+      type="email"
+      placeholder="your@email.com">
+  </label>
+
+
+  <div class="players" id="players"></div>
+
+
+  <label>
+    UTR / Transaction Reference
+    <input
+      id="utr"
+      required
+      maxlength="40"
+      placeholder="Enter UTR after payment">
+  </label>
+
+
+  <label>
+    Payment Confirmation
+    <select id="paymentConfirm" required>
+      <option value="">Select</option>
+      <option value="paid">I have completed the payment</option>
+    </select>
+  </label>
+
+
+  <button class="btn primary" type="submit">
+    🌊 SUBMIT REGISTRATION
+  </button>
+
+</form>
+
+
+<div class="success" id="success">
+
+  <div>✅ REGISTRATION SUBMITTED</div>
+
+  <p>Your registration code:</p>
+
+  <div class="success-code" id="successCode">
+    JLG19-000000
+  </div>
+
+  <p>
+    Save this code for tournament communication.
+  </p>
+
+  <p class="status">
+    Payment status: Pending verification
+  </p>
+
+</div>
+
+</div>
+
+
+<!-- PAYMENT -->
+
+<div class="card payment">
+
+  <h3>💳 PAYMENT</h3>
+
+  <p class="note">
+    Selected match entry
+  </p>
+
+  <div class="amount" id="amount">
+    ₹30
+  </div>
+
+  <p id="paymentMatch">
+    Solo Match 1
+  </p>
+
+
+  <div class="qr-wrap">
+
+    <div id="qr"></div>
+
+  </div>
+
+
+  <div class="upi">
+    BHARATPE2M0W0A8G0U27213@unitype
+  </div>
+
+
+  <button
+    class="btn primary"
+    style="width:100%;margin-top:12px"
+    type="button"
+    id="openUpi">
+
+    📲 OPEN UPI APP — <span id="upiAmount">₹30</span>
+
+  </button>
+
+
+  <button
+    class="btn secondary"
+    style="width:100%;margin-top:8px"
+    type="button"
+    id="copyUpi">
+
+    📋 COPY UPI ID
+
+  </button>
+
+
+  <p class="note">
+    Scan the QR or tap Open UPI App.
+    If your iPhone does not open a UPI application,
+    use the QR code or copy the UPI ID.
+  </p>
+
+  <p class="note">
+    ⚠️ Never enter your UPI PIN, OTP or bank password on this website.
+  </p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DASHBOARD -->
+<section id="dashboard">
+
+<div class="container">
+
+<div class="section-title">
+  <small>📊 ORGANIZER PANEL</small>
+  <h2>JALGAON DASHBOARD</h2>
+  <p>Static GitHub version — data is stored locally on this browser.</p>
+</div>
+
+
+<div class="card dashboard-login" id="dashLogin">
+
+  <h3>🔐 Dashboard Login</h3>
+
+  <label>
+    Dashboard PIN
+    <input
+      id="dashPin"
+      type="password"
+      placeholder="Enter dashboard PIN">
+  </label>
+
+  <button
+    class="btn primary"
+    style="width:100%;margin-top:12px"
+    onclick="unlockDashboard()">
+
+    🔓 OPEN DASHBOARD
+
+  </button>
+
+  <p class="note">
+    Default PIN: <b>JALGAON2026</b>
+  </p>
+
+</div>
+
+
+<div class="dashboard-app" id="dashApp">
+
+
+<div class="grid stats">
+
+  <div class="card stat">
+    <strong id="totalReg">0</strong>
+    <span>Total registrations</span>
+  </div>
+
+  <div class="card stat">
+    <strong id="soloReg">0</strong>
+    <span>Solo</span>
+  </div>
+
+  <div class="card stat">
+    <strong id="duoReg">0</strong>
+    <span>Duo</span>
+  </div>
+
+  <div class="card stat">
+    <strong id="squadReg">0</strong>
+    <span>Squad</span>
+  </div>
+
+</div>
+
+
+<div class="card">
+
+  <div class="btns">
+
+    <button class="btn secondary" onclick="exportCSV()">
+      📥 EXPORT CSV
+    </button>
+
+    <button class="btn secondary" onclick="clearRegistrations()">
+      🗑️ CLEAR LOCAL DATA
+    </button>
+
+  </div>
+
+  <div class="table-wrap">
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Match</th>
+          <th>Name</th>
+          <th>Mobile</th>
+          <th>Players</th>
+          <th>UTR</th>
+          <th>Amount</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+
+      <tbody id="registrationTable"></tbody>
+
+    </table>
+
+  </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="container">
+
+  <strong>Jalgaon BGMI Esports • JLG19</strong>
+
+  <p>
+    🌊 Ocean Odyssey • Jalgaon, Maharashtra 425001
+  </p>
+
+  <p>
+    Support:
+    <a href="mailto:jalgaonesports7@gmail.com">
+      jalgaonesports7@gmail.com
+    </a>
+  </p>
+
+  <p>
+    © 2026 JLG19 Esports
+  </p>
+
+</div>
+
+</footer>
+
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+
+/* =========================================================
+   TOURNAMENT CONFIG
+========================================================= */
+
+const UPI =
+"BHARATPE2M0W0A8G0U27213@unitype";
+
+const TOURNAMENT_DATE =
+"2026-10-18T19:00:00+05:30";
+
+const DASH_PIN =
+"JALGAON2026";
+
+
+const MATCHES = {
+
+  solo1:{
+    name:"Solo Match 1",
+    short:"Solo",
+    fee:30,
+    players:1
+  },
+
+  solo2:{
+    name:"Solo Match 2",
+    short:"Solo",
+    fee:30,
+    players:1
+  },
+
+  duo1:{
+    name:"Duo Match 1",
+    short:"Duo",
+    fee:60,
+    players:2
+  },
+
+  duo2:{
+    name:"Duo Match 2",
+    short:"Duo",
+    fee:60,
+    players:2
+  },
+
+  squad:{
+    name:"Squad Match",
+    short:"Squad",
+    fee:120,
+    players:4
+  }
+
+};
+
+
+/* =========================================================
+   HELPERS
+========================================================= */
+
+function $(id){
+  return document.getElementById(id);
+}
+
+
+function toast(message){
+
+  const t=$("toast");
+
+  t.textContent=message;
+
+  t.classList.add("show");
+
+  setTimeout(()=>{
+    t.classList.remove("show");
+  },3000);
+
+}
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+function countdown(){
+
+  const target=new Date(TOURNAMENT_DATE).getTime();
+
+  const now=Date.now();
+
+  let diff=target-now;
+
+  if(diff<0) diff=0;
+
+  const days=Math.floor(diff/86400000);
+
+  const hours=Math.floor(
+    (diff%86400000)/3600000
+  );
+
+  const minutes=Math.floor(
+    (diff%3600000)/60000
+  );
+
+  const seconds=Math.floor(
+    (diff%60000)/1000
+  );
+
+
+  $("days").textContent=
+    String(days).padStart(2,"0");
+
+  $("hours").textContent=
+    String(hours).padStart(2,"0");
+
+  $("minutes").textContent=
+    String(minutes).padStart(2,"0");
+
+  $("seconds").textContent=
+    String(seconds).padStart(2,"0");
+
+}
+
+setInterval(countdown,1000);
+countdown();
+
+
+/* =========================================================
+   PLAYER FIELDS
+========================================================= */
+
+function renderPlayers(){
+
+  const key=$("match").value;
+
+  const m=MATCHES[key];
+
+  const box=$("players");
+
+  box.innerHTML="";
+
+  for(let i=1;i<=m.players;i++){
+
+    const div=document.createElement("div");
+
+    div.className="player-box";
+
+    div.innerHTML=`
+
+      <label>
+        Player ${i} BGMI Name
+
+        <input
+          class="playerName"
+          required
+          maxlength="30"
+          placeholder="BGMI player name">
+      </label>
+
+      <label>
+        Player ${i} BGMI UID
+
+        <input
+          class="playerUID"
+          required
+          maxlength="20"
+          inputmode="numeric"
+          placeholder="BGMI UID">
+      </label>
+
+    `;
+
+    box.appendChild(div);
+
+  }
+
+}
+
+
+function updatePayment(){
+
+  const key=$("match").value;
+
+  const m=MATCHES[key];
+
+  $("amount").textContent="₹"+m.fee;
+
+  $("upiAmount").textContent="₹"+m.fee;
+
+  $("paymentMatch").textContent=m.name;
+
+  document.querySelectorAll(".match")
+    .forEach(x=>x.classList.remove("active"));
+
+  renderPlayers();
+
+  createQR();
+
+}
+
+
+$("match").addEventListener(
+  "change",
+  updatePayment
+);
+
+
+function selectMatch(key){
+
+  $("match").value=key;
+
+  updatePayment();
+
+  document
+    .getElementById("register")
+    .scrollIntoView({behavior:"smooth"});
+
+}
+
+
+/* =========================================================
+   QR
+   Uses the payment payload detected from the supplied QR.
+========================================================= */
+
+const SUPPLIED_QR_PAYLOAD =
+"upi://pay?pa=BHARATPE2M0W0A8G0U27213@unitype&pn=&cu=INR&bpsign=RWNZN2ZzUEM3UFZHV2FVUzZuWk1qTzFZUlRkN3JOSXg4WklLcG9DemtoVT0=";
+
+
+function createQR(){
+
+  const container=$("qr");
+
+  container.innerHTML="";
+
+  try{
+
+    const qr=qrcode(0,"M");
+
+    qr.addData(SUPPLIED_QR_PAYLOAD);
+
+    qr.make();
+
+    container.innerHTML=
+      qr.createImgTag(
+        6,
+        8
+      );
+
+    const img=container.querySelector("img");
+
+    if(img){
+
+      img.style.width="100%";
+      img.style.height="auto";
+      img.style.display="block";
+
+    }
+
+  }catch(error){
+
+    container.innerHTML=
+      "<p style='color:#333'>QR unavailable. Use the UPI ID below.</p>";
+
+  }
+
+}
+
+
+/* =========================================================
+   UPI PAYMENT
+========================================================= */
+
+function upiLink(){
+
+  const key=$("match").value;
+
+  const m=MATCHES[key];
+
+  return "upi://pay"+
+    "?pa="+encodeURIComponent(UPI)+
+    "&pn="+encodeURIComponent("Jalgaon BGMI Esports")+
+    "&am="+encodeURIComponent(m.fee)+
+    "&cu=INR"+
+    "&tn="+encodeURIComponent(
+      "JLG19 "+m.name
+    );
+
+}
+
+
+$("openUpi").addEventListener(
+  "click",
+  function(){
+
+    const url=upiLink();
+
+    window.location.href=url;
+
+    setTimeout(()=>{
+      toast(
+        "If your UPI app did not open, scan the QR or copy the UPI ID."
+      );
+    },1200);
+
+  }
+);
+
+
+$("copyUpi").addEventListener(
+  "click",
+  async function(){
+
+    try{
+
+      await navigator.clipboard.writeText(UPI);
+
+      toast("UPI ID copied!");
+
+    }catch(e){
+
+      toast("UPI ID: "+UPI);
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   REGISTRATION CODE
+========================================================= */
+
+function generateCode(){
+
+  const chars="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+
+  let code="";
+
+  for(let i=0;i<6;i++){
+
+    code+=chars[
+      Math.floor(Math.random()*chars.length)
+    ];
+
+  }
+
+  return "JLG19-"+code;
+
+}
+
+
+/* =========================================================
+   REGISTRATION
+========================================================= */
+
+$("registrationForm").addEventListener(
+  "submit",
+  function(e){
+
+    e.preventDefault();
+
+    const key=$("match").value;
+
+    const m=MATCHES[key];
+
+    const team=$("teamName").value.trim();
+
+    const mobile=$("mobile").value.trim();
+
+    const email=$("email").value.trim();
+
+    const utr=$("utr").value.trim();
+
+    const confirm=$("paymentConfirm").value;
+
+
+    if(!/^[0-9]{10}$/.test(mobile)){
+
+      toast("Enter a valid 10 digit mobile number.");
+
+      return;
+
+    }
+
+
+    if(!utr){
+
+      toast("Enter your UTR / transaction reference.");
+
+      return;
+
+    }
+
+
+    if(confirm!=="paid"){
+
+      toast("Please confirm that payment is completed.");
+
+      return;
+
+    }
+
+
+    const names=[
+      ...document.querySelectorAll(".playerName")
+    ].map(x=>x.value.trim());
+
+    const uids=[
+      ...document.querySelectorAll(".playerUID")
+    ].map(x=>x.value.trim());
+
+
+    const cleanedUIDs=uids.filter(Boolean);
+
+    const uniqueUIDs=
+      new Set(cleanedUIDs);
+
+
+    if(uniqueUIDs.size!==cleanedUIDs.length){
+
+      toast("Duplicate BGMI UID detected.");
+
+      return;
+
+    }
+
+
+    const registration={
+
+      code:generateCode(),
+
+      created:new Date().toISOString(),
+
+      match:m.name,
+
+      type:m.short,
+
+      amount:m.fee,
+
+      team,
+
+      mobile,
+
+      email,
+
+      utr,
+
+      players:names.map(
+        (name,index)=>({
+          name:name,
+          uid:uids[index]
+        })
+      ),
+
+      status:"Pending verification"
+
+    };
+
+
+    const list=
+      JSON.parse(
+        localStorage.getItem(
+          "JLG19_REGISTRATIONS"
+        ) || "[]"
+      );
+
+
+    list.push(registration);
+
+
+    localStorage.setItem(
+      "JLG19_REGISTRATIONS",
+      JSON.stringify(list)
+    );
+
+
+    $("successCode").textContent=
+      registration.code;
+
+    $("success").style.display="block";
+
+
+    $("registrationForm").reset();
+
+    $("match").value=key;
+
+    updatePayment();
+
+
+    toast(
+      "Registration saved: "+
+      registration.code
+    );
+
+
+    window.location.hash="success";
+
+  }
+);
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+function unlockDashboard(){
+
+  if($("dashPin").value===DASH_PIN){
+
+    $("dashLogin").style.display="none";
+
+    $("dashApp").style.display="block";
+
+    refreshDashboard();
+
+    toast("Dashboard unlocked.");
+
+  }else{
+
+    toast("Wrong dashboard PIN.");
+
+  }
+
+}
+
+
+function getRegistrations(){
+
+  return JSON.parse(
+    localStorage.getItem(
+      "JLG19_REGISTRATIONS"
+    ) || "[]"
+  );
+
+}
+
+
+function refreshDashboard(){
+
+  const list=getRegistrations();
+
+  $("totalReg").textContent=list.length;
+
+  $("soloReg").textContent=
+    list.filter(x=>x.type==="Solo").length;
+
+  $("duoReg").textContent=
+    list.filter(x=>x.type==="Duo").length;
+
+  $("squadReg").textContent=
+    list.filter(x=>x.type==="Squad").length;
+
+
+  const table=$("registrationTable");
+
+  table.innerHTML="";
+
+
+  if(!list.length){
+
+    table.innerHTML=`
+      <tr>
+        <td colspan="8" class="empty">
+          No registrations yet.
+        </td>
+      </tr>
+    `;
+
+    return;
+
+  }
+
+
+  list.forEach(r=>{
+
+    const tr=document.createElement("tr");
+
+    const players=
+      r.players
+      .map(
+        p=>p.name+" ("+p.uid+")"
+      )
+      .join("<br>");
+
+
+    tr.innerHTML=`
+
+      <td>
+        <b style="color:var(--cyan)">
+          ${escapeHTML(r.code)}
+        </b>
+      </td>
+
+      <td>${escapeHTML(r.match)}</td>
+
+      <td>${escapeHTML(r.team)}</td>
+
+      <td>${escapeHTML(r.mobile)}</td>
+
+      <td>${players}</td>
+
+      <td>${escapeHTML(r.utr)}</td>
+
+      <td>₹${r.amount}</td>
+
+      <td class="status">
+        ${escapeHTML(r.status)}
+      </td>
+
+    `;
+
+    table.appendChild(tr);
+
+  });
+
+}
+
+
+function escapeHTML(value){
+
+  return String(value)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+
+}
+
+
+/* =========================================================
+   CSV EXPORT
+========================================================= */
+
+function exportCSV(){
+
+  const list=getRegistrations();
+
+  if(!list.length){
+
+    toast("No registrations to export.");
+
+    return;
+
+  }
+
+
+  const rows=[
+
+    [
+      "Registration Code",
+      "Match",
+      "Team",
+      "Mobile",
+      "Email",
+      "Players",
+      "UTR",
+      "Amount",
+      "Status",
+      "Created"
+    ]
+
+  ];
+
+
+  list.forEach(r=>{
+
+    rows.push([
+
+      r.code,
+
+      r.match,
+
+      r.team,
+
+      r.mobile,
+
+      r.email,
+
+      r.players
+        .map(p=>p.name+" / "+p.uid)
+        .join(" | "),
+
+      r.utr,
+
+      r.amount,
+
+      r.status,
+
+      r.created
+
+    ]);
+
+  });
+
+
+  const csv=rows.map(row=>
+    row.map(value=>
+      '"'+String(value).replaceAll('"','""')+'"'
+    ).join(",")
+  ).join("\n");
+
+
+  const blob=new Blob(
+    [csv],
+    {type:"text/csv;charset=utf-8"}
+  );
+
+
+  const url=
+    URL.createObjectURL(blob);
+
+
+  const a=document.createElement("a");
+
+  a.href=url;
+
+  a.download=
+    "JLG19-BGMI-Registrations.csv";
+
+  a.click();
+
+  URL.revokeObjectURL(url);
+
+}
+
+
+/* =========================================================
+   CLEAR
+========================================================= */
+
+function clearRegistrations(){
+
+  const ok=
+    confirm(
+      "Delete all registrations stored on this browser?"
+    );
+
+  if(!ok)return;
+
+  localStorage.removeItem(
+    "JLG19_REGISTRATIONS"
+  );
+
+  refreshDashboard();
+
+  toast("Local registrations cleared.");
+
+}
+
+
+/* =========================================================
+   START
+========================================================= */
+
+renderPlayers();
+
+createQR();
+
+updatePayment();
+
+</script>
+
+</body>
+</html>
